@@ -1,0 +1,42 @@
+package View;
+
+public class Position 
+{
+	public static final int X = 1;
+	public static final int O = 2;
+	public static final int NONE = 0;
+	
+	public int symbol;
+	public boolean used;
+	
+	
+	public Position() {
+	
+		symbol = NONE;
+		used = false;
+	}
+	
+	public int getSymbol() {
+		return symbol;
+	}
+	
+	public boolean getUsed() {
+		return used;
+	}
+	
+	public void setSymbol(int Symbol) {
+		symbol = Symbol;
+		used = true;
+	}
+	
+	public void setUsed(boolean t) {
+		used = t;
+	}
+	
+	public String toString() {
+		if(symbol == 0) {return "   ";}
+		if(symbol == 1) {return " X ";}
+		else {return " O ";}
+	}
+}
+
