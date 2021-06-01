@@ -1,38 +1,39 @@
 package View;
 
-public class Position 
+public class Position // this class is each positon on the board. They will be used in a 3x3 to make the board.
 {
-	public static final int X = 1;
-	public static final int O = 2;
-	public static final int NONE = 0;
+	public static final int X = 1; // stores the numeralical info of each game symbol
+	public static final int O = 2; // stores the numeralical info of each game symbol
+	public static final int NONE = 0; // stores the numeralical info of each game symbol
 	
-	public int symbol;
-	public boolean used;
+	public int symbol; // this hold the symbol of that position
+	public boolean used; //this is a boolean to see if the position has been changed.
 	
 	
-	public Position() {
+	public Position() { // contructor of the position class
 	
 		symbol = NONE;
 		used = false;
 	}
-	
+	// getter method that returns the symbol
 	public int getSymbol() {
 		return symbol;
 	}
-	
+	//getter method that return if the position has been changed from null
 	public boolean getUsed() {
 		return used;
 	}
-	
+	// setter method that sets the symbol
 	public void setSymbol(int Symbol) {
 		symbol = Symbol;
 		used = true;
 	}
-	
+	//setter method that sets the used boolean
 	public void setUsed(boolean t) {
 		used = t;
 	}
 	
+	// turn the symbol to a string
 	public String toString() {
 		if(symbol == 0) {return "   ";}
 		if(symbol == 1) {return " X ";}
