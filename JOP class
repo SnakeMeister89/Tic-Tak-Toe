@@ -1,0 +1,23 @@
+package Content;
+
+import java.awt.Font;
+
+import javax.swing.JOptionPane;
+import javax.swing.UIManager;
+import javax.swing.plaf.FontUIResource;
+
+public class JOP {
+
+	public static void msg(String msg) {
+		 UIManager.put("OptionPane.messageFont", new FontUIResource(new Font(  
+		          "Arial", Font.BOLD, 18)));
+		JOptionPane.showMessageDialog(null, msg);
+	}
+	
+	public static String in(String msg){
+		 UIManager.put("OptionPane.messageFont", new FontUIResource(new Font(  
+		          "Lucida Console", Font.BOLD, 18)));
+		return JOptionPane.showInputDialog(msg);
+	}
+}
+
