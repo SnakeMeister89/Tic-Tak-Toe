@@ -1,6 +1,6 @@
 package View;
 
-public class Main {
+public class Main { // this is the main method and all it does is create the game and run the game.
 
 	public static void main(String[] args) {
 		Game game = new Game();
