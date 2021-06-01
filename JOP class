@@ -6,14 +6,15 @@ import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import javax.swing.plaf.FontUIResource;
 
-public class JOP {
+public class JOP { // this is the GUI that i used that shows the players all the information
 
+// prints a message
 	public static void msg(String msg) {
 		 UIManager.put("OptionPane.messageFont", new FontUIResource(new Font(  
 		          "Arial", Font.BOLD, 18)));
 		JOptionPane.showMessageDialog(null, msg);
 	}
-	
+	// prints a message and gets the user input
 	public static String in(String msg){
 		 UIManager.put("OptionPane.messageFont", new FontUIResource(new Font(  
 		          "Lucida Console", Font.BOLD, 18)));
