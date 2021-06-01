@@ -6,14 +6,14 @@ public class Game {
 // this class is the bulk of my coding where i use the position objects to form a 
 //grid and keep track of the game.
 	
-	public static final int X = 1;
-	public static final int O = 2;
-	public static final int NONE = 0;
+	public static final int X = 1; // This allows me to turn the game symbols into numbers for easier use.
+	public static final int O = 2; // This allows me to turn the game symbols into numbers for easier use.
+	public static final int NONE = 0; // This allows me to turn the game symbols into numbers for easier use.
 	
-	public boolean gameover;
-	public Position[][] board;
+	public boolean gameover; //a boolean where the game stops if it is true
+	public Position[][] board; //this holds the positions objects in a grid
 	
-	public Game() {
+	public Game() { //makes the game, constructor
 		gameover = false;
 		board = new Position[3][3];
 		for(int r = 0; r < 3; r++) { 
@@ -25,7 +25,7 @@ public class Game {
 		game();
 	}
 	
-	
+	// this return the board as it is as a string
 	public String printBoard() {
 		String temp = "";
 		temp += board[0][0].getSymbol() + " | " + board[0][1].getSymbol() + " | " + board[0][2].getSymbol() + "\n";
@@ -37,6 +37,7 @@ public class Game {
 		return temp;
 	}
 	
+	// this method moves for the computer
 	public void getRandomMove()
 	{
 		int counter = 0;
@@ -58,6 +59,7 @@ public class Game {
 		}
 	}
 	
+	//this method gets the player move and does it
 	public void PlayerMove()
 	{
 		boolean temp = true;
@@ -76,7 +78,7 @@ public class Game {
 		}
 	}
 	
-	
+	/all this returns the string of the game instructions
 	public String instructions()
 	{
 		String message = "You always go first. Type the number that you would like to go and click \" enter \"" + "\n"; 
@@ -89,6 +91,7 @@ public class Game {
 		return message;
 	}
 	
+	/all this method is the game
 	public void game() {
 		while(gameover == false) {
 			PlayerMove();
@@ -101,6 +104,7 @@ public class Game {
 		JOP.msg(ending());
 	}
 	
+	// this method checks if the game is over and someone won
 	public void checkWinner() {
 		
 		if(board[0][0].getSymbol() == board[0][1].getSymbol() && board[0][0].getSymbol() == board[0][2].getSymbol() && board[0][2].getUsed()) {gameover = true;}
@@ -112,7 +116,7 @@ public class Game {
 		else if(board[0][0].getSymbol() == board[1][1].getSymbol() && board[0][0].getSymbol() == board[2][2].getSymbol() && board[2][2].getUsed()) {gameover = true;}
 		else if(board[0][2].getSymbol() == board[1][1].getSymbol() && board[0][2].getSymbol() == board[2][0].getSymbol() && board[2][0].getUsed()) {gameover = true;}
 	}
-	
+	// prints the ending string
 	public String ending() {
 		return printBoard() + "Thank you for playing :)";
 		
